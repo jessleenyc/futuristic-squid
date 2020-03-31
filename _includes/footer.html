@@ -1,0 +1,9 @@
+<!-- Footer -->
+<footer class="footer container">
+    <div class="copyright">{{ site.data.footer.content | markdownify }}</div>
+    <nav>
+        {% for link_item in site.data.footer.links %}
+            <a class="subtle-link" href="{{ link_item.url }}" {% assign new_window_is_not_empty = link_item.new_window | is_not_empty %}{% if new_window_is_not_empty %}target="_blank"{% endif %}>{{ link_item.text }}</a>
+        {% endfor %}
+    </nav>
+</footer>

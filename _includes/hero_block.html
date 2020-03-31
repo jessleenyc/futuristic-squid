@@ -1,0 +1,11 @@
+<!-- Section -->
+<section id="{{ include.section.section_id }}" class="hero">
+    {% if include.section.image or site.data.author.avatar %}<img src="{% assign image_is_not_empty = include.section.image | is_not_empty %}{% if image_is_not_empty %}{{ include.section.image | relative_url }}{% else %}{{ site.data.author.avatar | relative_url }}{% endif %}"/>{% endif %}
+    {% assign title_is_not_empty = include.section.title | is_not_empty %}
+    {% if title_is_not_empty %}
+    <div class="copy">
+        <h1>{{ include.section.title }}</h1>
+        {{ include.section.subtitle | markdownify }}
+    </div>
+    {% endif %}
+</section>

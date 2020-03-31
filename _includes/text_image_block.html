@@ -1,0 +1,7 @@
+<!-- Section -->
+<section id="{{ include.section.section_id }}" class="content">
+    {% assign image_is_not_empty = include.section.image | is_not_empty %}{% if image_is_not_empty %}<img class="inline-image" src="{{ include.section.image | relative_url }}"/>{% endif %}
+    <div class="text-with-image">
+        {{ include.section.text | markdownify }}
+    </div>
+</section>
